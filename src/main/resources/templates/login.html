@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Login Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            <link rel="styleSheet" type="text/css" th:href="@{style1.css}" />
+    </head>
+
+    <body style="background: #4b6cb7;  /* fallback for old browsers */
+          background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+          background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-3" style="margin-top: 150px">
+                    <div class="card singal-price">
+                        <div class="card-title">
+                            <div></div>
+                            <h3 class="text-center">Login Here !!</h3>
+                        </div>
+                        <div class="card-body">
+                            <form th:action="@{/home}" method="post" th:object="${login}">
+                                <div th:if="${param.error}">
+                                    <div class="alert alert-danger">Invalid Username & password</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>
+                                </div>
+                                <div class="container text-center">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-grad">Submit</button>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a type="submit" th:href="@{/register}" class="btn btn-grads">Register</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </body>
+
+</html>
